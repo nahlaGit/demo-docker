@@ -1,0 +1,26 @@
+<h2>All films in our stock </h2>
+<br><br>
+ 
+<div class="col-md-6">
+    <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>Actors' list</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let f of data._embedded.films">
+            <td>{{f.title}}</td>
+            <td>{{f.actors}}</td>
+            <td><button class="btn btn-danger" (click)="deleteFilm(film)"> Delete Film</button></td>
+        </tr>
+        <tr  *ngFor="let a of data._embedded.actors">
+
+            <p>{{a.firstName}} </p><br>
+            <p>{{a.lastName}} <p>
+        </tr>
+    </tbody>
+      </table>
+  
+    </div>
